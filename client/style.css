@@ -4,15 +4,18 @@ body {
 }
 
 @font-face {
-    src: url("./Zefani.otf");
+    src: url("./font/Zefani.otf");
     font-family: "Zedani";
-    font-style: normal;
 }
 
 @font-face {
-    src: url("./nugo.ttf");
+    src: url("./font/nugo.ttf");
     font-family: "nugo";
-    font-style: normal;
+}
+
+@font-face {
+    src: url("./font/Montserrate-Light.otf");
+    font-family: "Montserrate-Light";
 }
 
 #Video img {
@@ -52,7 +55,7 @@ h2 {
 }
 
 .arrow-down img {
-    position: fixed;
+    position: absolute;
     top: 90vh;
     left: 47vw;
     width: 100px;
@@ -73,29 +76,38 @@ a.welcome {
     text-shadow: 1px 1px 2px rgb(235, 233, 242), 0 0 1em rgb(255, 253, 255),
         0 0 0.2em rgb(31, 31, 188);
     padding: 10px 1em;
-    border: white 1px solid;
+    border: rgb(28, 52, 230) 1px solid;
     letter-spacing: 0.05em;
 }
 
 a.welcome:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
+    background-color: rgb(28, 52, 230);
 }
 
-/* -------------------------- login page ---------------------------*/
+/* -------------------------- login page ------------------------------*/
+
+#login-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
 
 #login-box {
-    font-family:"nugo" ;
+    font-family: "nugo";
+    font-size: 1em;
     flex-wrap: wrap;
     display: flex;
     justify-items: left;
     flex-direction: column;
-    gap: 20px;
-    width: 30vw;
-    height: 60vh;
-    left: 40vw;
-    top: 40vh;
-    position: absolute;
+    gap: 5vh;
+    width: 40vw;
+    height: 100vh;
+    left: 60vw;
+    /* top: 40vh; */
     z-index: 3;
+    padding: 400px 10vw;
+    position: absolute;
 }
 
 #login-box input {
@@ -107,4 +119,183 @@ a.welcome:hover {
     border-right: none;
     border-bottom: solid #2a2828 1px;
     padding: 3px 10px;
+    width: 15vw;
+}
+
+button {
+    width: 15vw;
+    height: 4vh;
+    font-size: 1em;
+    background-color: rgb(28, 52, 230);
+    font-weight: bolder;
+    color: white;
+    border: rgb(28, 52, 230) 2px solid;
+}
+button:hover {
+    background-color: #6b6de7;
+    border: #6b6de7 5px solid;
+}
+
+#login-right {
+    width: 60vw;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+}
+#login-right img {
+    width: 60vw;
+    height: auto;
+    object-fit: cover;
+    z-index: 2;
+    margin-top: 10vh;
+    position: absolute;
+    animation: linear;
+    animation-name: sidein;
+    animation-duration: 2s;
+}
+
+@keyframes sidein {
+    0% {
+        left: -60vw;
+    }
+    100% {
+        left: 0vw;
+    }
+}
+
+/* ------------------------- Password-Reset Page--------------------------------- */
+
+#reset-box {
+    display: grid;
+    place-items: center;
+    font-family: "nugo";
+    font-size: larger;
+    width: 40vw;
+    height: 40vh;
+    position: absolute;
+    left: 0;
+    gap: 4vh;
+    padding: 30vh 3vw;
+    background-color: chartreuse;
+}
+
+#reset-box input {
+    padding: 3px 10px;
+    width: 15vw;
+    height: 4vh;
+}
+
+/* -------------------- Board ---------------------- */
+
+#board {
+    width: 90vw;
+    height: 330vh;
+    overflow-y: scroll;
+    background-color: white;
+    padding: 2vh 2vw;
+}
+
+/* -------------------- (About us) ---------------------- */
+
+.about-us {
+    width: 90%;
+    height: 210vh;
+    flex-wrap: wrap;
+    padding-left: 5vw;
+    /* background-color: cornflowerblue; */
+    position: absolute;
+}
+.about-us h1 {
+    font-size: 4em;
+}
+
+.about-us h4 {
+    font-family: "nugo";
+    font-weight: 100;
+    font-size: 1.5em;
+    letter-spacing: 0.01em;
+}
+
+.about-us h3 {
+    position: absolute;
+    right: 8vw;
+    font-size: 3em;
+    color: rgb(28, 52, 230);
+    width: 40%;
+    margin-top: 12vh;
+    margin-left: 5vw;
+}
+
+.ai-img {
+    width: 45vw;
+    height: auto;
+    margin-left: 5vw;
+}
+
+.lab-img img {
+    width: 60vw;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    left: 20vw;
+}
+/* -------------------- News ---------------------- */
+
+.news {
+    width: 95%;
+    height: 120vh;
+    background-color: rgba(63, 60, 60, 0.4);
+    position: absolute;
+    top: 330vh;
+}
+
+.news header {
+    width: 100%;
+    height: 12vh;
+    background: url(./img/header.jpeg);
+    filter: brightness(0.3);
+}
+
+.news h2 {
+    color: white;
+    z-index: 10;
+    position: absolute;
+    top: 2vh;
+    left: 44vw;
+    font-family: "nugo";
+    letter-spacing: 0.1em;
+}
+.modal-container {
+    display: flex;
+    width: 100%;
+    height: 60vh;
+    padding: 2vh 5vw;
+    z-index: 100;
+    gap: 3vw;
+}
+
+/* -------------------- FOOTER ---------------------- */
+#contact {
+    position: absolute;
+    left: 5vw;
+    bottom: 10vh;
+}
+
+#contact img {
+    width: 40vw;
+    height: auto;
+    z-index: 30;
+}
+
+footer {
+    position: absolute;
+    bottom: 2vh;
+    height: 6vh;
+    width: 100%;
+    background: black;
+    color: white;
+    line-height: 6vh;
+    text-align: center;
+    letter-spacing: 0.1em;
+    font-family: "nugo";
+    font-size: 1.2em;
 }

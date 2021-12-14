@@ -39,32 +39,40 @@ export default class Login extends React.Component {
     render() {
         return (
             <>
-                <div id="login-box">
-                    {this.state.error && (
-                        <div className="error">
-                            Oops!Somenthing wrong, please try again
-                        </div>
-                    )}
+                <div id="login-container">
+                    <div id="login-right">
+                        <img src="./img/1.jpeg"></img>
 
-                    <input
-                        type="email"
-                        name="email"
-                        onChange={(e) => this.handleChange(e)}
-                        placeholder="Email"
-                    />
-                    <input
-                        type="password"
-                        name="password"
-                        onChange={(e) => this.handleChange(e)}
-                        placeholder="Password"
-                    />
-                    <button onClick={() => this.submit()}>login</button>
+                        {/* <img src="./img/2.jpeg"></img> */}
+                    </div>
+                    <div id="login-box">
+                        <h2>Z-lab</h2>
+                        {this.state.error && (
+                            <div className="error">
+                                Oops!Somenthing wrong, please try again
+                            </div>
+                        )}
 
-                    <p>
-                        Forgot password ?{" "}
-                        <Link to="/reset-password">click here</Link> to reset
-                        your password
-                    </p>
+                        <input
+                            type="email"
+                            name="email"
+                            onChange={(e) => this.handleChange(e)}
+                            placeholder="Email"
+                        />
+                        <input
+                            type="password"
+                            name="password"
+                            onChange={(e) => this.handleChange(e)}
+                            placeholder="Password"
+                        />
+                        <button onClick={() => this.submit()}>log in</button>
+
+                        <p>
+                            Forgot password ?{" "}
+                            <Link to="/reset-password">click here</Link> to
+                            reset your password
+                        </p>
+                    </div>
                 </div>
             </>
         );
