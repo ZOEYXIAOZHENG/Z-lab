@@ -17,6 +17,11 @@ body {
     font-family: "nugo";
 }
 
+@font-face {
+    src: url("./font/Montserrat-Regular.otf");
+    font-family: "Montserrat-Regular";
+}
+
 #Video img {
     position: absolute;
     background-position: center;
@@ -121,6 +126,10 @@ a.welcome:hover {
     width: 15vw;
 }
 
+.error {
+    color: orangered;
+}
+
 button {
     width: 15vw;
     height: 4vh;
@@ -151,6 +160,7 @@ button:hover {
     animation: linear;
     animation-name: sidein;
     animation-duration: 2s;
+    /* transition: all 0.2s ease-in-out; */
 }
 
 @keyframes sidein {
@@ -261,12 +271,13 @@ button:hover {
 .news {
     width: 100%;
     height: 120vh;
+    margin-top: 40vh;
+    padding-left: 4vw;
     /* background-color: rgba(214, 228, 86, 0.4); */
-    margin-top: 20vh;
 }
 
 .news header {
-    width: 90vw;
+    width: 100%;
     height: 12vh;
     background: url(./img/header.jpeg);
     filter: brightness(0.3);
@@ -277,7 +288,7 @@ button:hover {
     z-index: 10;
     position: absolute;
     margin-left: 42vw;
-    top: 335vh;
+    top: 333vh;
     font-family: "nugo";
     letter-spacing: 0.1em;
 }
@@ -290,41 +301,41 @@ button:hover {
     margin-top: 10vh;
 }
 .news-box {
-    width: 26vw;
+    width: 27vw;
     height: 45vh;
     display: flex;
     flex-direction: column;
     font-size: medium;
-    /* gap: 3vh; */
 }
 .news-box img {
-    width: 26vw;
+    width: 27vw;
     height: auto;
     object-fit: cover;
 }
 .news-box a {
     text-decoration: none;
     color: black;
-    font-family: sans-serif;
+    font-family: "Montserrat-Regular";
     font-size: 2em;
 }
-/* -------------------- FOOTER ---------------------- */
-#contact {
-    right: 5vw;
-    bottom: 15vh;
+
+.news-box a:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 3px 20px 10px rgba(22, 15, 159, 0.3);
+    color: orangered;
 }
+
+/* -------------------- FOOTER ---------------------- */
 
 #contact img {
     width: 40vw;
     height: auto;
-    z-index: 30;
 }
 
 footer {
-    /* position: absolute; */
-    margin-bottom: 2vh;
+    margin-bottom: 1vh;
     height: 6vh;
-    width: 100%;
+    width: 100vw;
     background: black;
     color: white;
     line-height: 6vh;
@@ -364,7 +375,7 @@ footer {
 .models img:hover {
     filter: none;
     transform: scale(1.1);
-    box-shadow: 0px 3px 20px 10px rgba(22, 15, 159, 0.3);
+    box-shadow: 0px 3px 20px 10px rgba(33, 33, 34, 0.3);
 }
 
 /* -------------------- Profile  page---------------------- */
@@ -382,10 +393,15 @@ footer {
     height: 100vh;
     padding-left: 6vw;
     display: list-item;
+    font-family: "Montserrat-Regular";
 }
 
 .profile-text h1 {
     font-size: 4em;
+}
+
+.profile-text h4 {
+    font-size: 1.2em;
 }
 .model-profile {
     width: 60vw;
@@ -401,7 +417,7 @@ footer {
     object-fit: cover;
 }
 
-/* -------------------- Profile  page---------------------- */
+/* --------------------  Navibar ---------------------- */
 
 .navibar {
     background: transparent;
@@ -432,4 +448,87 @@ footer {
     transition: all 0.2s ease-in-out;
     background: #fff;
     color: #808080;
+}
+
+/* --------------------  AI search ---------------------- */
+
+#ai-page {
+    background: black;
+    color: white;
+    width: 100vw;
+    height: 120vh;
+    padding: 3vw;
+    display: flex;
+}
+.uploader-box {
+    /* background-color: rgb(246, 219, 63); */
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    font-family: sans-serif;
+    margin-right: 3vw;
+}
+
+.uploader-box h4 {
+    color: orangered;
+}
+
+.uploader-box img {
+    width: 35vw;
+    height: auto;
+    z-index: 20;
+}
+
+.match-board {
+    /* background: yellow; */
+    width: 60vw;
+    height: 90vh;
+    z-index: 50;
+    overflow-y: scroll;
+    margin-left: 3vw;
+    padding: 5vw;
+    display: grid;
+    place-items: center;
+}
+
+.match_models img {
+    width: 36vw;
+    height: auto;
+    object-fit: cover;
+    max-width: 100%;
+    z-index: 30;
+}
+
+/* -------------------- poppy  ---------------*/
+
+#poppy {
+    width: 100vw;
+    height: 150vh;
+    padding: 6vw;
+}
+/* #poppy img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 3;
+} */
+
+.poppy-container {
+    display: grid;
+    grid-template-columns: repeat(4, 20%);
+    grid-template-rows: repeat(4, 28%);
+    padding: 3vw;
+}
+.poppy-container img {
+    width: 15vw;
+    height: 15vw;
+    object-fit: cover;
+    z-index: 3;
+    border-radius: 50%;
+}
+.thanks img {
+    width: 30vw;
+    height: auto;
+    position: absolute;
+    left: 65vw;
 }

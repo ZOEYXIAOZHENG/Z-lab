@@ -38,8 +38,6 @@ export default function Login() {
             <div id="login-container">
                 <div id="login-right">
                     <img src="./img/1.jpeg"></img>
-
-                    {/* <img src="./img/2.jpeg"></img> */}
                 </div>
                 <div id="login-box">
                     <h2>Z-Lab</h2>
@@ -53,13 +51,13 @@ export default function Login() {
                         type="email"
                         name="email"
                         onChange={handleChange}
-                        placeholder="Email"
+                        placeholder="* Email"
                     />
                     <input
                         type="password"
                         name="password"
                         onChange={handleChange}
-                        placeholder="Password"
+                        placeholder="* Password"
                     />
                     <button onClick={submit}>log in</button>
 

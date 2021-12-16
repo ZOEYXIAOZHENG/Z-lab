@@ -14,6 +14,7 @@ export default function Welcome() {
             <div className="arrow-down">
                 <img src="./img/arrow-down.gif" />
             </div>
+
             <Link className="welcome" to="/login">
                 Login
             </Link>
@@ -74,8 +75,8 @@ export default function Welcome() {
                             alt="Twiiter/Instagram/Youtube"
                         ></img>
                     </div>
-                    <footer>Zheng Xiao Copyright reserved 2021</footer>
                 </div>
+                <footer>Zheng Xiao Copyright reserved 2021</footer>
             </div>
             {/* </BrowserRouter> */}
         </>

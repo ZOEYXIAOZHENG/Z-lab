@@ -7,6 +7,7 @@ import ResetPassword from "./reset.js";
 import Models from "./models.js";
 import ModelProfile from "./model_profile.js";
 import Search from "./search.js";
+import Join from "./join.js";
 
 export default function App() {
     return (
@@ -21,9 +22,6 @@ export default function App() {
                 <Route exact path="/login">
                     <Login />
                 </Route>
-                {/* /* <Route>
-                    <Navibar />
-                </Route> */}
                 <Route exact path="/models">
                     <Models />
                 </Route>
@@ -32,6 +30,9 @@ export default function App() {
                 </Route>
                 <Route exact path="/search">
                     <Search />
+                </Route>
+                <Route exact path="/join">
+                    <Join />
                 </Route>
             </BrowserRouter>
         </>

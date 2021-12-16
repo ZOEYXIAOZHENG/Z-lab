@@ -53,7 +53,7 @@ const diskStorage = multer.diskStorage({
 const uploader = multer({
     storage: diskStorage,
     limits: {
-        fileSize: 2097152,
+        fileSize: 10097152,
     },
 });
 
@@ -173,6 +173,7 @@ app.get("/models/:id.json", (req, res) => {
 
 app.post("/search", uploader.single("file"), s3.upload, (req, res) => {
     console.log("req.file", req.file);
+    const url = `https://s3.amazonaws.com/spicedling/${req.file.filename}`;
     // console.log(fs.createReadStream(req.file.path));
     if (req.file.path) {
         let dataToSend;
@@ -191,15 +192,17 @@ app.post("/search", uploader.single("file"), s3.upload, (req, res) => {
             dataToSend = message;
         });
         pyshell.end(function (err, code, signal) {
-            if (err) throw err;
-            res.json(dataToSend);
-            console.log("The exit code was: " + code);
-            console.log("The exit signal was: " + signal);
-            console.log("finished");
+            if (err) {
+                res.json({ success: false, url: url });
+                console.log("cannot find a match");
+            } else {
+                res.json({ success: true, data: dataToSend, url: url });
+                console.log("The exit code was: " + code);
+                console.log("The exit signal was: " + signal);
+                console.log("finished");
+            }
         });
-        // const userId = req.session.userId;
-        // const url = `https://s3.amazonaws.com/spicedling/${req.file.filename}`;
-        // db.addProfilePic({ url, userId })
+
         //     .then(({ rows }) => res.json(rows[0]))
         //     .catch((err) => console.log("error on UPLOAD ProfilePic:", err));
     } else {
