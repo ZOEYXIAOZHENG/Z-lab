@@ -69,28 +69,33 @@ export default class ResetPassword extends React.Component {
     resetPassword() {
         if (this.state.stage === "start") {
             return (
-                <div id="reset-box">
-                    <h4>
-                        Please enter your email address below and we will send
-                        you the reset instruction:
-                    </h4>
+                <>
+                    <div id="reset-right">
+                        <img src="./img/reset-base.jpeg"></img>
+                    </div>
+                    <div id="reset-box">
+                        <h4>
+                            Please enter your email address below and we will
+                            send you the reset instruction:
+                        </h4>
 
-                    {this.state.error && (
-                        <div className="error">
-                            Oops!Somenthing wrong, please try again
-                        </div>
-                    )}
+                        {this.state.error && (
+                            <div className="error">
+                                Oops!Somenthing wrong, please try again
+                            </div>
+                        )}
 
-                    <input
-                        type="email"
-                        name="email"
-                        onChange={(e) => this.handleChange(e)}
-                        placeholder="Email"
-                    />
+                        <input
+                            type="email"
+                            name="email"
+                            onChange={(e) => this.handleChange(e)}
+                            placeholder="Email"
+                        />
 
-                    <button onClick={() => this.sendOTP()}>Get OTP</button>
-                    <Link to="/login">Abort</Link>
-                </div>
+                        <button onClick={() => this.sendOTP()}>Get OTP</button>
+                        <Link to="/login">Abort</Link>
+                    </div>
+                </>
             );
         } else if (this.state.stage === "OTP") {
             return (

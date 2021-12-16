@@ -1,7 +1,11 @@
+// import { BrowserRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
+import News from "./news.js";
+
 export default function Welcome() {
     return (
         <>
+            {/* <BrowserRouter> */}
             <div id="base-text">
                 <h1>Z-LAB</h1>
                 <h2>Professional AI Model Searching Engine</h2>
@@ -61,17 +65,19 @@ export default function Welcome() {
                 <div className="news">
                     <header></header>
                     <h2>NEWS</h2>
-                    <div className="modal-container">
-                        <div>link1</div>
-                        <div>link2</div>
-                        <div>link3</div>
-                    </div>
+
+                    <News />
+
                     <div id="contact">
-                        <img src="./img/media.png" alt="Twiiter/Instagram/Youtube"></img>
+                        <img
+                            src="./img/media.png"
+                            alt="Twiiter/Instagram/Youtube"
+                        ></img>
                     </div>
                     <footer>Zheng Xiao Copyright reserved 2021</footer>
                 </div>
             </div>
+            {/* </BrowserRouter> */}
         </>
     );
 }

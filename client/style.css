@@ -9,13 +9,12 @@ body {
 }
 
 @font-face {
+    src: url("./font/Metropolis.ttf");
+    font-family: "Metropolis";
+}
+@font-face {
     src: url("./font/nugo.ttf");
     font-family: "nugo";
-}
-
-@font-face {
-    src: url("./font/Montserrate-Light.otf");
-    font-family: "Montserrate-Light";
 }
 
 #Video img {
@@ -89,7 +88,7 @@ a.welcome:hover {
 
 #login-container {
     width: 100vw;
-    height: 100vh;
+    height: 60vh;
     display: flex;
 }
 
@@ -102,11 +101,11 @@ a.welcome:hover {
     flex-direction: column;
     gap: 5vh;
     width: 40vw;
-    height: 100vh;
+    height: 60vh;
     left: 60vw;
     /* top: 40vh; */
     z-index: 3;
-    padding: 400px 10vw;
+    padding: 30vh 10vw;
     position: absolute;
 }
 
@@ -132,13 +131,14 @@ button {
     border: rgb(28, 52, 230) 2px solid;
 }
 button:hover {
-    background-color: #6b6de7;
-    border: #6b6de7 5px solid;
+    background-color: #f34317;
+    border: #f34317 5px solid;
+    transform: scale(1.1);
 }
 
 #login-right {
     width: 60vw;
-    height: 100vh;
+    height: 60vh;
     background-color: rgb(255, 255, 255);
 }
 #login-right img {
@@ -165,17 +165,17 @@ button:hover {
 /* ------------------------- Password-Reset Page--------------------------------- */
 
 #reset-box {
-    display: grid;
-    place-items: center;
     font-family: "nugo";
     font-size: larger;
     width: 40vw;
-    height: 40vh;
+    height: 100vh;
     position: absolute;
-    left: 0;
-    gap: 4vh;
-    padding: 30vh 3vw;
-    background-color: chartreuse;
+    left: 3vw;
+    padding: 25vh 6vw;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    place-items: center;
 }
 
 #reset-box input {
@@ -184,6 +184,22 @@ button:hover {
     height: 4vh;
 }
 
+#reset-right {
+    width: 50vw;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    padding: 20vh 3vw;
+}
+
+#reset-right img {
+    width: 30vw;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    left: 13vw;
+    border-radius: 50%;
+}
 /* -------------------- Board ---------------------- */
 
 #board {
@@ -192,6 +208,9 @@ button:hover {
     overflow-y: scroll;
     background-color: white;
     padding: 2vh 2vw;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
 }
 
 /* -------------------- (About us) ---------------------- */
@@ -202,7 +221,6 @@ button:hover {
     flex-wrap: wrap;
     padding-left: 5vw;
     /* background-color: cornflowerblue; */
-    position: absolute;
 }
 .about-us h1 {
     font-size: 4em;
@@ -241,43 +259,59 @@ button:hover {
 /* -------------------- News ---------------------- */
 
 .news {
-    width: 95%;
+    width: 100%;
     height: 120vh;
-    background-color: rgba(63, 60, 60, 0.4);
-    position: absolute;
-    top: 330vh;
+    /* background-color: rgba(214, 228, 86, 0.4); */
+    margin-top: 20vh;
 }
 
 .news header {
-    width: 100%;
+    width: 90vw;
     height: 12vh;
     background: url(./img/header.jpeg);
     filter: brightness(0.3);
 }
 
 .news h2 {
-    color: white;
+    color: rgb(255, 255, 255);
     z-index: 10;
     position: absolute;
-    top: 2vh;
-    left: 44vw;
+    margin-left: 42vw;
+    top: 335vh;
     font-family: "nugo";
     letter-spacing: 0.1em;
 }
-.modal-container {
+#news-container {
     display: flex;
     width: 100%;
     height: 60vh;
-    padding: 2vh 5vw;
     z-index: 100;
-    gap: 3vw;
+    justify-content: space-evenly;
+    margin-top: 10vh;
 }
-
+.news-box {
+    width: 26vw;
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    font-size: medium;
+    /* gap: 3vh; */
+}
+.news-box img {
+    width: 26vw;
+    height: auto;
+    object-fit: cover;
+}
+.news-box a {
+    text-decoration: none;
+    color: black;
+    font-family: sans-serif;
+    font-size: 2em;
+}
 /* -------------------- FOOTER ---------------------- */
 #contact {
-    position: absolute;
-    left: 5vw;
-    bottom: 10vh;
+    right: 5vw;
+    bottom: 15vh;
 }
 
 #contact img {
@@ -287,8 +321,8 @@ button:hover {
 }
 
 footer {
-    position: absolute;
-    bottom: 2vh;
+    /* position: absolute; */
+    margin-bottom: 2vh;
     height: 6vh;
     width: 100%;
     background: black;
@@ -298,4 +332,104 @@ footer {
     letter-spacing: 0.1em;
     font-family: "nugo";
     font-size: 1.2em;
+}
+
+/* -------------------- Models  page---------------------- */
+
+#models-base {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(4, 20%);
+    grid-template-rows: repeat(3, 30%);
+    overflow-y: scroll;
+    gap: 6vh;
+    padding: 3vw;
+    margin-left: 5vw;
+}
+
+#models-base a {
+    text-decoration: none;
+    color: rgb(14, 14, 73);
+    font-size: 18px;
+    font-family: "Didot";
+    font-weight: lighter;
+}
+.models img {
+    object-fit: cover;
+    width: 16vw;
+    height: 36vh;
+    filter: grayscale();
+}
+
+.models img:hover {
+    filter: none;
+    transform: scale(1.1);
+    box-shadow: 0px 3px 20px 10px rgba(22, 15, 159, 0.3);
+}
+
+/* -------------------- Profile  page---------------------- */
+
+#profile-page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.profile-text {
+    width: 40vw;
+    height: 100vh;
+    padding-left: 6vw;
+    display: list-item;
+}
+
+.profile-text h1 {
+    font-size: 4em;
+}
+.model-profile {
+    width: 60vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.model-profile img {
+    width: 60vw;
+    height: auto;
+    object-fit: cover;
+}
+
+/* -------------------- Profile  page---------------------- */
+
+.navibar {
+    background: transparent;
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2rem calc((100vw - 1000px) / 2);
+    z-index: 12;
+}
+
+.navibar a {
+    border-radius: 4px;
+    background: black;
+    padding: 10px 22px;
+    color: rgb(242, 238, 238);
+    outline: none;
+    border: 1px solid rgb(0, 0, 0);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    margin-left: 24px;
+    font-family: "Metropolis";
+}
+.navibar a:hover {
+    /* transform: scale(1.3);
+    cursor: pointer; */
+    transition: all 0.2s ease-in-out;
+    background: #fff;
+    color: #808080;
 }
