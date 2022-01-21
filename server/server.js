@@ -37,6 +37,7 @@ app.use((req, res, next) => {
     next();
 });
 
+// Parses url-encoded request bodies + makes them available as "req.body".
 app.use(require("body-parser").urlencoded({ extended: false }));
 
 const diskStorage = multer.diskStorage({
@@ -57,7 +58,7 @@ const uploader = multer({
     },
 });
 
-//--------------------------------  ROUTE  -----------------------------------------
+//--------------------------------  ROUTE  -------------------------------
 
 app.get("/user/id.json", function (req, res) {
     res.json({
@@ -123,11 +124,11 @@ app.post("/password/reset/start", (req, res) => {
 });
 
 app.post("/password/reset/verify", (req, res) => {
-    let { email, newPass, verCode } = req.body;
-    db.verifyResetCode(verCode, email)
+    let { email, newPass, code } = req.body;
+    db.verifyResetCode(code, email)
         .then((data) => {
             console.log("data.rows[0].code", data.rows[0].code);
-            if (data.rows[0].code === verCode) {
+            if (data.rows[0].code === code) {
                 db.hashPassword(newPass)
                     .then((hashedPassword) => {
                         return db.updatePassword(hashedPassword, email);

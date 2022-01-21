@@ -178,7 +178,7 @@ button:hover {
     font-family: "nugo";
     font-size: larger;
     width: 40vw;
-    height: 100vh;
+    height: 40vh;
     position: absolute;
     left: 3vw;
     padding: 25vh 6vw;
@@ -196,7 +196,7 @@ button:hover {
 
 #reset-right {
     width: 50vw;
-    height: 100vh;
+    height: 60vh;
     position: absolute;
     right: 0;
     padding: 20vh 3vw;
@@ -456,7 +456,7 @@ footer {
     background: black;
     color: white;
     width: 100vw;
-    height: 120vh;
+    height: 130vh;
     padding: 3vw;
     display: flex;
 }
@@ -467,26 +467,45 @@ footer {
     gap: 2vh;
     font-family: sans-serif;
     margin-right: 3vw;
+    margin-left: 3vw;
+}
+
+.uploader-box input {
+    width: 30vw;
+    height: 4vh;
+    font-size: 20px;
+    line-height: 3vh;
 }
 
 .uploader-box h4 {
     color: orangered;
 }
 
-.uploader-box img {
-    width: 35vw;
+img.loading {
+    width: 50vw;
     height: auto;
     z-index: 20;
+    position: fixed;
+    left: 25vw;
+    top: 25vh;
+}
+
+img.uploaded_image {
+    width: 24vw;
+    height: auto;
+    z-index: 21;
+    margin-top: 5vh;
+    margin-left: 5vw;
 }
 
 .match-board {
     /* background: yellow; */
     width: 60vw;
-    height: 90vh;
+    height: 100vh;
     z-index: 50;
     overflow-y: scroll;
     margin-left: 3vw;
-    padding: 5vw;
+    gap: 5vw;
     display: grid;
     place-items: center;
 }
@@ -499,6 +518,12 @@ footer {
     z-index: 30;
 }
 
+.match-result a {
+    font-family: "Montserrat-Regular";
+    font-size: 20px;
+    color: yellow;
+}
+
 /* -------------------- poppy  ---------------*/
 
 #poppy {
@@ -506,12 +531,6 @@ footer {
     height: 150vh;
     padding: 6vw;
 }
-/* #poppy img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    z-index: 3;
-} */
 
 .poppy-container {
     display: grid;

@@ -99,42 +99,53 @@ export default class ResetPassword extends React.Component {
             );
         } else if (this.state.stage === "OTP") {
             return (
-                <div id="reset-box">
-                    <h3>
-                        An email with a verification code has been send to you
-                    </h3>
-                    <div>
-                        <input
-                            type="password"
-                            name="newPass"
-                            onChange={(e) => this.handleChange(e)}
-                            placeholder="New Password"
-                        />
+                <>
+                    <div id="reset-right">
+                        <img src="./img/reset-base.jpeg"></img>
                     </div>
-                    <div>
-                        <input
-                            type="password"
-                            name="verCode"
-                            onChange={(e) => this.handleChange(e)}
-                            placeholder="Verification code"
-                        />
+                    <div id="reset-box">
+                        <h3>
+                            An email with a verification code has been send to
+                            you
+                        </h3>
+                        <div>
+                            <input
+                                type="password"
+                                name="newPass"
+                                onChange={(e) => this.handleChange(e)}
+                                placeholder="New Password"
+                            />
+                        </div>
+                        <div>
+                            <input
+                                type="password"
+                                name="verCode"
+                                onChange={(e) => this.handleChange(e)}
+                                placeholder="Verification code"
+                            />
+                        </div>
+                        <button onClick={() => this.verify()}>Submit</button>
+                        <div>
+                            {this.state.error && (
+                                <div className="error">
+                                    Oops, something went wrong!
+                                </div>
+                            )}
+                        </div>
                     </div>
-                    <button onClick={() => this.verify()}>Submit</button>
-                    <div>
-                        {this.state.error && (
-                            <div className="error">
-                                Oops, something went wrong!
-                            </div>
-                        )}
-                    </div>
-                </div>
+                </>
             );
         } else if (this.state.stage === "verified") {
             return (
-                <div id="reset-box">
-                    <h1>Password successfully updated!</h1>
-                    <Link to="/login">Click here to log in</Link>
-                </div>
+                <>
+                    <div id="reset-right">
+                        <img src="./img/reset-base.jpeg"></img>
+                    </div>
+                    <div id="reset-box">
+                        <h1>Password successfully updated!</h1>
+                        <Link to="/login">Click here to log in</Link>
+                    </div>
+                </>
             );
         }
     }

@@ -80,7 +80,7 @@ export default class Search extends Component {
                 <div id="ai-page">
                     <div className="uploader-box">
                         <h2 onClick={this.props.toggleUploader}>
-                            upload here the face you are looking for?
+                            💡upload here the face you are looking for?
                         </h2>
                         <input
                             id="button"
@@ -89,7 +89,7 @@ export default class Search extends Component {
                             accept="image/*"
                             onChange={this.setFile}
                         />
-                        <button onClick={this.upload}>Upload</button>
+                        <button onClick={this.upload}>SEARCH</button>
 
                         {/* <div
                             onClick={this.props.toggleUploader}
@@ -99,11 +99,11 @@ export default class Search extends Component {
                         {this.state && this.state.error && (
                             <h4>
                                 Sorry, cannot match a result, please try another
-                                picture. Notice: file limit 2MB.{" "}
+                                picture. Notice: file limit 2MB.
                             </h4>
                         )}
                         {!this.state.url && this.state.uploading && (
-                            <img src="./img/loading.gif" />
+                            <img src="./img/loading.gif" className="loading" />
                         )}
                         <img src={this.state.url} className="uploaded_image" />
                     </div>
@@ -124,7 +124,7 @@ export default class Search extends Component {
                                     </Link>
                                     <a
                                         href={each.agency_url}
-                                        target="_blank"
+                                        // target="_blank"
                                         rel="noopener noreferrer"
                                     >
                                         {" "}
