@@ -19,7 +19,11 @@ AI Searching Engine "Z-Lab" Project: a data-driven web applications. Used AI tec
 
 -   Landing Page
 
-    <img src="client/public/img/Z-lab.mp4">
+    
+
+https://user-images.githubusercontent.com/90629487/150569800-58802924-fd72-40cd-bd73-9c8036feb19c.mp4
+
+
 
     <br>
 
